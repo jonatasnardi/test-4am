@@ -1,0 +1,21 @@
+.discount-seal {
+  width: 53px;
+  height: 53px;
+  background: url(../../../../public/images/save-seal.png) no-repeat;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font-weight: bold;
+  line-height: 14px;
+}
+
+@media (max-width: 767px) {
+  .discount-seal {
+    font-size: 12px;
+  }
+  .discount-seal.absolute {
+    position: absolute;
+  }
+}
