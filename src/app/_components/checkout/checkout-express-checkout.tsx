@@ -7,7 +7,7 @@ const ExpressCheckout = () => {
   return (
     <>
       <div className="flex p-4 flex-col rounded-lg border-[1px] items-center border-[#ddd]">
-        <p className="relative top-[-30px] bg-[#ffffff] w-[200px] text-center inline-block">Express Checkout</p>
+        <p className="relative top-[-30px] bg-[#ffffff] w-[200px] text-center inline-block mb-[-15px]">Express Checkout</p>
         <button className="bg-[#ffc439] rounded-lg w-full p-5 flex justify-center">
           <Image
             src={logoPaypal}

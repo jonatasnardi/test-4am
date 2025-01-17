@@ -8,7 +8,7 @@ funnelFlux: 'var fluxDefaults = {
 funnelFluxName: "Splash Foam - Checkout"
 metaTitle: "Secure Checkout - Splash Foam Toilet Cleaner"
 metaDescription: "Ready to purchase Splash Foam Toilet Cleaner? Complete your order securely and select your preferred quantity. Fast and easy checkout!"
-buttonCta: "Complete Purchase"
+buttonCta: "Complete Checkout"
 logo: "/images/splash-foam/splash-foam-sales-logo.svg"
 stickyCampaign: "275"
 header:

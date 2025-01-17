@@ -11,7 +11,7 @@ const DiscountSeal = ({
   isAbsolute,
 }: DiscountProps) => {
   return (
-    <span className={`discount-seal ${isAbsolute && "absolute"}`}>
+    <span className={`discount-seal ${isAbsolute && "absolute left-[70px] md:left-[110px]"}`}>
       {percent}<br />OFF
     </span>
   );

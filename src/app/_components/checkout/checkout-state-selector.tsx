@@ -414,7 +414,7 @@ const StateProvinceSelect = ({ formik, country }: Props) => {
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.state}
-          className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
+          className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
         >
           <option disabled value="">
             Select {currentCountry.name}

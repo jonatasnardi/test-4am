@@ -10,7 +10,7 @@ type Props = {
 const CheckoutMobilePaymentOptions = ({ firePaypal, loading }: Props) => {
   return (
     <>
-      <div className="flex w-full justify-start items-center pb-4">
+      <div className="flex w-full justify-start items-center gap-2 pb-4">
         <GlobeAmericasIcon className="h-[16px] w-[16px] mr-2" />
         <h3 className="font-bold text-[16px]">Step 2: Payment Options</h3>
       </div>

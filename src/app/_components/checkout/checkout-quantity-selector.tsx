@@ -7,6 +7,8 @@ import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { delay } from "@/app/_utils/delay";
 import { PriceDisplaySimple } from "./checkout-price-display";
 import DiscountSeal from "./discount-seal";
+import HighDemand from "./checkout-high-demand";
+import OldValue from "./checkout-old-value";
 
 type QuantityProps = {
   product: ProductInfoType;
@@ -108,30 +110,20 @@ const QuantitySelector = ({
         className="flex w-full justify-between items-center pb-6"
         id="quantity-selector"
       >
-        <div className="flex w-full">
+        <div className="flex w-full gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-10 mt-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
           </svg>
           <div>
-            <h3 className="font-bold text-[28px]">Select Quantity</h3>
-            <p className="text-[15px]">How many hearing aids do you want?</p>
+            <h3 className="font-bold text-[23px] md:text-[28px]">Select Quantity</h3>
+            <p className="text-[12px] md:text-[15px]">How many hearing aids do you want?</p>
           </div>
         </div>
-        {/* <div className="flex w-1/3 justify-end">
-          <div
-            className={`${
-              showCouponFlag
-                ? "bg-[#ffe300] text-blue-500 border-blue-500"
-                : "invisible"
-            } px-2 md:px-4 py-2 text-center font-bold uppercase text-[10px] md:text-[14px] border-[3px] rounded-md flex items-center justify-center whitespace-nowrap`}
-          >
-            $5 OFF Winner!
-          </div>
-        </div> */}
       </div>
-      <div className="flex w-full flex-col sm:space-y-10 mb-10">
+      <HighDemand />
+      <div className="flex w-full flex-col sm:space-y-10">
         <div
-          className={`flex w-full border-[1px] border-[#333] rounded-md cursor-pointer mb-10 md:mb-0 hover:shadow-sm  hover:shadow-blue-500 transition-all ${
+          className={`flex w-full border-[2px] border-[#ddd] px-2 md:px-4 py-6 rounded-md cursor-pointer mb-10 md:mb-0 transition-all ${
             product.product === 0 && "border-blue-500 border-[3px] bg-[#ffffcb]"
           }`}
           onClick={() => {
@@ -157,7 +149,7 @@ const QuantitySelector = ({
               />
               Buy 1 Pair
             </p>
-            <div className="flex">
+            <div className="flex relative">
               <Image
                 src={info.product.image1}
                 width={120}
@@ -169,13 +161,14 @@ const QuantitySelector = ({
           </div>
           <div className="flex w-2/3 sm:w-1/2 flex-col justify-start items-center text-[#282828] text-center">
             <div className="flex flex-col justify-center items-end w-full space-x-2 sm:space-x-0 mr-5">
-              <p className="text-[17px] text-[#000000] line-through">
+              <p className="text-[17px] text-[#000000] relative">
                 {/* {info.product.ogPrice1} */}
                 <PriceDisplaySimple
                   priceUSD={parseFloat(info.product.ogPrice1)}
                   countryCode={country}
                   digits={0}
                 />
+                <OldValue />
               </p>
 
               <p className="text-[30px] text-[#000000]  font-bold" id="price1">
@@ -197,7 +190,7 @@ const QuantitySelector = ({
           </div>
         </div>
         <div
-          className={`flex w-full border-[1px] border-[#333] rounded-md cursor-pointer mb-10 hover:shadow-sm  hover:shadow-blue-500 transition-all relative ${
+          className={`flex w-full border-[2px] border-[#ddd] px-2 md:px-4 py-6 rounded-md cursor-pointer mb-10 transition-all relative ${
             product.product === 1 && "bg-[#ffffcb] border-blue-500 border-[3px] "
           }`}
           onClick={() => {
@@ -212,6 +205,9 @@ const QuantitySelector = ({
           }}
         >
           <div className="bg-[#257BCA] h-[30px] absolute text-white flex justify-center rounded-md px-4 left-[20px] top-[-30px] text-[12px] font-bold w-[180px] items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-4 fill-[#FF9900]">
+            <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clipRule="evenodd" />
+          </svg>{' '}
             BESTSELLER
           </div>
           <div className="flex flex-col w-1/3 sm:w-1/2 justify-center items-start ml-5">
@@ -226,7 +222,7 @@ const QuantitySelector = ({
               />
               Buy 2 Pair
             </p>
-            <div className="flex">
+            <div className="flex relative">
               <Image
                 src={info.product.image2}
                 width={120}
@@ -238,13 +234,14 @@ const QuantitySelector = ({
           </div>
           <div className="flex w-2/3 sm:w-1/2 flex-col justify-start items-center text-[#282828] text-center">
             <div className="flex flex-col justify-center items-end w-full space-x-2 sm:space-x-0 mr-5">
-              <p className="text-[17px] text-[#000000] line-through">
+              <p className="text-[17px] text-[#000000] relative">
                 {/* {info.product.ogPrice1} */}
                 <PriceDisplaySimple
                   priceUSD={parseFloat(info.product.ogPrice2)}
                   countryCode={country}
                   digits={0}
                 />
+                <OldValue />
               </p>
 
               <p className="text-[30px] text-[#000000]  font-bold" id="price1">
@@ -267,7 +264,7 @@ const QuantitySelector = ({
         </div>
        
         <div
-          className={`flex w-full border-[1px] border-[#333] rounded-md cursor-pointer mb-10 hover:shadow-sm  hover:shadow-blue-500 transition-all relative overflow-hidden ${
+          className={`flex w-full border-[2px] border-[#ddd] px-2 md:px-4 py-6 rounded-md cursor-pointer mb-10 transition-all relative overflow-hidden ${
             product.product === 2 && "border-blue-500 border-[3px] bg-[#ffffcb]"
           }`}
           onClick={() => {
@@ -293,7 +290,7 @@ const QuantitySelector = ({
               />
               Buy 3 Pair
             </p>
-            <div className="flex">
+            <div className="flex relative">
               <Image
                 src={info.product.image3}
                 width={120}
@@ -305,13 +302,14 @@ const QuantitySelector = ({
           </div>
           <div className="flex w-2/3 sm:w-1/2 flex-col justify-start items-center text-[#282828] text-center">
             <div className="flex flex-col justify-center items-end w-full space-x-2 sm:space-x-0 mr-5">
-              <p className="text-[17px] text-[#000000] line-through">
+              <p className="text-[17px] text-[#000000] relative">
                 {/* {info.product.ogPrice1} */}
                 <PriceDisplaySimple
                   priceUSD={parseFloat(info.product.ogPrice3)}
                   countryCode={country}
                   digits={0}
                 />
+                <OldValue />
               </p>
 
               <p className="text-[30px] text-[#000000]  font-bold" id="price1">
@@ -333,7 +331,7 @@ const QuantitySelector = ({
           </div>
         </div>
         <div
-          className={`flex w-full border-[1px] border-[#333] rounded-md cursor-pointer mb-10 hover:shadow-sm  hover:shadow-blue-500 transition-all relative overflow-hidden ${
+          className={`flex w-full border-[2px] border-[#ddd] px-2 md:px-4 py-6 rounded-md cursor-pointer mb-10 transition-all relative overflow-hidden ${
             product.product === 3 && "border-blue-500 border-[3px] bg-[#ffffcb]"
           }`}
           onClick={() => {
@@ -359,7 +357,7 @@ const QuantitySelector = ({
               />
               Buy 4 Pair
             </p>
-            <div className="flex">
+            <div className="flex relative">
               <Image
                 src={info.product.image4}
                 width={120}
@@ -371,13 +369,14 @@ const QuantitySelector = ({
           </div>
           <div className="flex w-2/3 sm:w-1/2 flex-col justify-start items-center text-[#282828] text-center">
             <div className="flex flex-col justify-center items-end w-full space-x-2 sm:space-x-0 mr-5">
-              <p className="text-[17px] text-[#000000] line-through">
+              <p className="text-[17px] text-[#000000] relative">
                 {/* {info.product.ogPrice1} */}
                 <PriceDisplaySimple
                   priceUSD={parseFloat(info.product.ogPrice4)}
                   countryCode={country}
                   digits={0}
                 />
+                <OldValue />
               </p>
 
               <p className="text-[30px] text-[#000000]  font-bold" id="price1">

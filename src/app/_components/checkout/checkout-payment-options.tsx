@@ -9,6 +9,7 @@ import { CheckoutPageType } from "@/interfaces/checkoutPage";
 import { ProductInfoType } from "@/interfaces/productInfo";
 import StateProvinceSelect from "./checkout-state-selector";
 import { PriceDisplaySimple } from "./checkout-price-display";
+import { seals, sealsAlt } from "@/lib/site-info";
 
 type PaymentProps = {
   info: CheckoutPageType;
@@ -196,7 +197,7 @@ const PaymentOptions = ({
       )}
 
       <form onSubmit={formik.handleSubmit}>
-        <div className="flex w-full justify-start items-center">
+        <div className="flex w-full justify-start items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10 mt-4">
             <path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375V13.5h12V6.375c0-1.036-.84-1.875-1.875-1.875h-8.25ZM13.5 15h-12v2.625c0 1.035.84 1.875 1.875 1.875h.375a3 3 0 1 1 6 0h3a.75.75 0 0 0 .75-.75V15Z" />
             <path d="M8.25 19.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0ZM15.75 6.75a.75.75 0 0 0-.75.75v11.25c0 .087.015.17.042.248a3 3 0 0 1 5.958.464c.853-.175 1.522-.935 1.464-1.883a18.659 18.659 0 0 0-3.732-10.104 1.837 1.837 0 0 0-1.47-.725H15.75Z" />
@@ -204,8 +205,8 @@ const PaymentOptions = ({
           </svg>
           
           <div>
-            <h3 className="font-bold text-[28px]">Shipping Information</h3>
-            <p className="text-[15px]">Where do we send your Hearing aid?</p>
+            <h3 className="font-bold text-[23px] md:text-[28px]">Shipping Information</h3>
+            <p className="text-[12px] md:text-[15px]">Where do we send your Hearing aid?</p>
           </div>
         </div>
         <div className="flex w-full space-x-4 mt-4">
@@ -214,7 +215,7 @@ const PaymentOptions = ({
             <div className="relative w-full">
               <select
                 onChange={handleCountryChange}
-                className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
+                className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
                 value={formik.values.country}
                 name="country"
               >
@@ -250,7 +251,7 @@ const PaymentOptions = ({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.address}
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] mb-2 rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] mb-2 rounded-md"
               placeholder="Address"
             />
             {formik.touched.address && formik.errors.address ? (
@@ -264,7 +265,7 @@ const PaymentOptions = ({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.address2}
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px]  rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px]  rounded-md"
               placeholder="Apartment, suite, etc. (optional)"
             />
           </div>
@@ -278,7 +279,7 @@ const PaymentOptions = ({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.city}
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
               placeholder="City"
             />
             {formik.touched.city && formik.errors.city ? (
@@ -303,7 +304,7 @@ const PaymentOptions = ({
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.zip}
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
               placeholder={(country === "US" && "Zip Code") || "Postal Code"}
             />
             {formik.touched.zip && formik.errors.zip ? (
@@ -344,7 +345,7 @@ const PaymentOptions = ({
               value={formik.values.card}
               maxLength={16}
               pattern="\d*"
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
               placeholder="Credit Card Number"
             />
             {formik.touched.card && formik.errors.card ? (
@@ -361,7 +362,7 @@ const PaymentOptions = ({
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.month}
-                className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
+                className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
               >
                 <option disabled value="" className="text-[#ccc]">
                   Month
@@ -395,7 +396,7 @@ const PaymentOptions = ({
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.year}
-                className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
+                className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] sm:text-[14px] rounded-md bg-white"
               >
                 <option disabled value="" className="text-[#ccc]">
                   Year
@@ -443,7 +444,7 @@ const PaymentOptions = ({
               value={formik.values.cvv}
               maxLength={4}
               pattern="\d*"
-              className="w-full border-[1px] border-[#333] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
+              className="w-full border-[2px] border-[#ddd] px-4 py-2 text-[16px] sm:text-[14px] rounded-md"
               placeholder="CVV"
             />
             {formik.touched.cvv && formik.errors.cvv ? (
@@ -473,7 +474,7 @@ const PaymentOptions = ({
         <input
           type="submit"
           value={info.buttonCta}
-          className="text-[18px] uppercase bg-[#29af5c] w-full py-8 mt-4 rounded-lg text-white font-bold green-text-shadow border-b-[3px] border-[#128e41] cursor-pointer hover:bg-[#0ebf52]"
+          className="text-[18px] md:text-[28px] bg-[#00af3a] w-full py-4 mt-4 rounded-lg text-white font-bold green-text-shadow border-b-[3px] border-[#128e41] cursor-pointer hover:bg-[#0ebf52]"
         />
       </form>
       {/* <div className="flex full flex-col items-start justify-start">
@@ -503,26 +504,13 @@ const PaymentOptions = ({
         </div>
       </div> */}
       {/* <div className="h-[1px] w-full bg-[#ddd] mt-2 mb-4" /> */}
-      <div className="flex w-full items-center mt-4">
+      <div className="flex w-full justify-center items-center mt-4">
         <Image
-          src="https://imagedelivery.net/3TTaU3w9z1kOYYtN3czCnw/8ff78d00-d526-4377-2537-257830592600/public"
+          src={seals}
           width={505}
           height={37}
-          alt="Secure Checkout"
+          alt={sealsAlt}
         />
-      </div>
-      <div className="h-[1px] w-full bg-[#ddd] mt-2 mb-4" />
-      <div className="flex flex-col w-full items-center">
-        <div className="flex pt-2 pb-2">
-          <LockClosedIcon className="h-[24px] w-[24px] mr-2 text-[#008900] text-shadow" />
-          <p className="text-[14px] sm:text-[18px] uppercase text-center">
-            <span className="text-[#008900] font-bold ">SSL</span> Secured
-            Payment
-          </p>
-        </div>
-        <p className="text-[12px] sm:text-[14px] text-center">
-          Your information is protected by 256-bit SSL encryption.
-        </p>
       </div>
     </>
   );

@@ -34,3 +34,5 @@ export const saveSeal = "/images/save-seal.png";
 export const clockIcon = "/images/icons/clock.svg";
 export const logoPaypal = "/images/pay-pal-icon.png";
 export const logoPaypalAlt = "Logo Paypal";
+export const seals = "/images/seals.jpg";
+export const sealsAlt = "Guaranteed Safe Checkout";

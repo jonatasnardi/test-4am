@@ -59,13 +59,13 @@ const CustomerInfo = ({ formik }: CustomerInfoProps) => {
 
   return (
     <>
-      <div className="flex w-full justify-start items-center pb-6">
+      <div className="flex w-full justify-start items-center gap-2 pb-6">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10 mt-4">
           <path fillRule="evenodd" d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clipRule="evenodd" />
         </svg>
         <div>
-          <h3 className="font-bold text-[28px]">Customer Information</h3>
-          <p className="text-[15px]">Order Confirmation Details Will Be Sent Here</p>
+          <h3 className="font-bold text-[23px] md:text-[28px]">Customer Information</h3>
+          <p className="text-[12px] md:text-[15px]">Order Confirmation Details Will Be Sent Here</p>
         </div>
       </div>
       <form onSubmit={formik.handleSubmit}>
@@ -80,7 +80,7 @@ const CustomerInfo = ({ formik }: CustomerInfoProps) => {
               }}
               onBlur={formik.handleBlur}
               value={formik.values.firstName}
-              className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
+              className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
               placeholder="First Name"
             />
             {formik.touched.firstName && formik.errors.firstName ? (
@@ -99,7 +99,7 @@ const CustomerInfo = ({ formik }: CustomerInfoProps) => {
               }}
               onBlur={formik.handleBlur}
               value={formik.values.lastName}
-              className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
+              className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
               placeholder="Last Name"
             />
             {formik.touched.lastName && formik.errors.lastName ? (
@@ -120,7 +120,7 @@ const CustomerInfo = ({ formik }: CustomerInfoProps) => {
               }}
               onBlur={formik.handleBlur}
               value={formik.values.email}
-              className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
+              className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
               placeholder="Email Address"
             />
             {formik.touched.email && formik.errors.email ? (
@@ -137,7 +137,7 @@ const CustomerInfo = ({ formik }: CustomerInfoProps) => {
               onChange={handleChange}
               onBlur={formik.handleBlur}
               value={formattedPhone}
-              className="w-full border-[1px] border-[#333]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
+              className="w-full border-[2px] border-[#ddd]  px-4 py-2 text-[16px] rounded-md sm:text-[14px]"
               placeholder="Phone"
             />
             {formik.touched.phone && formik.errors.phone ? (

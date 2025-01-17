@@ -447,7 +447,7 @@ const CheckoutForm = ({ info }: Props) => {
                 country={country}
               />
             </div>
-            <div className="bg-white p-4 rounded-lg border-[1px] border-[#ddd] mt-4">
+            <div className="bg-white p-4 pb-0 rounded-lg">
               <QuantitySelector
                 product={product}
                 info={info}
@@ -456,16 +456,13 @@ const CheckoutForm = ({ info }: Props) => {
                 country={country}
               />
             </div>
-            <div className="bg-white p-4 rounded-lg border-[1px] border-[#ddd] mt-4 lg:hidden">
-              <MobilePaymentOptions firePaypal={firePaypal} loading={loading} />
-            </div>
             <div className="mt-6">
               <ExpressCheckout />
             </div>
-            <div className="bg-white p-4 rounded-lg border-[1px] border-[#ddd] mt-4">
+            <div className="bg-white p-4 rounded-lg">
               <CustomerInfo formik={formik} />
             </div>
-            <div className="bg-white p-4 rounded-lg border-[1px] border-[#ddd] mt-4">
+            <div className="bg-white p-4 rounded-lg">
               <PaymentOptions
                 info={info}
                 product={product}
